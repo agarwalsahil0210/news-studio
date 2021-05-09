@@ -1,4 +1,4 @@
-import 'dart:convert';
+//import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
@@ -32,15 +32,13 @@ class MyBottomNavigationBar extends StatefulWidget {
 }
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
-
   int _currentIndex = 0;
-  final List<Widget> _children =[
+  final List<Widget> _children = [
     HomePage(),
     FormScreen(),
   ];
 
-  void onTappedBar(int index)
-  {
+  void onTappedBar(int index) {
     setState(() {
       _currentIndex = index;
     });
@@ -51,22 +49,15 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
     return new Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.orangeAccent,
           onTap: onTappedBar,
           currentIndex: _currentIndex,
-          items:
-          [
+          items: [
             BottomNavigationBarItem(
-                icon: new Icon(Icons.home),
-                title: new Text("Home")
-            ),
+                icon: new Icon(Icons.home), label: ("Home")),
             BottomNavigationBarItem(
-                icon: new Icon(Icons.contact_mail),
-                title: new Text("Profile")
-            ),
-          ]
-      ),
+                icon: new Icon(Icons.contact_mail), label: ("Profile")),
+          ]),
     );
   }
 }
-

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-
 class DetailsPage extends StatefulWidget {
-
-  String title,author,urlToImage,publishedAt,description;
-  DetailsPage({this.title,this.author,this.description,this.publishedAt,this.urlToImage }){}
+  String title, author, urlToImage, publishedAt, description;
+  DetailsPage(
+      {this.title,
+      this.author,
+      this.description,
+      this.publishedAt,
+      this.urlToImage});
 
   @override
   _DetailsPageState createState() => _DetailsPageState();
@@ -22,7 +25,7 @@ class _DetailsPageState extends State<DetailsPage> {
               widget.urlToImage,
               fit: BoxFit.cover,
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height*0.5,
+              height: MediaQuery.of(context).size.height * 0.5,
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 300.0, 0.0, 0.0),
@@ -34,38 +37,39 @@ class _DetailsPageState extends State<DetailsPage> {
                   child: Column(
                     children: <Widget>[
                       Padding(
-                        padding:  EdgeInsets.fromLTRB(20.0,20.0, 20.0, 20.0),
-                        child: Text(widget.title,
+                        padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+                        child: Text(
+                          widget.title,
                           style: TextStyle(
                             fontSize: 25.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
-                      Text(widget.publishedAt.substring(0,10),
+                      Text(
+                        widget.publishedAt.substring(0, 10),
                         style: TextStyle(
                           fontSize: 15.0,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Text(widget.description,
+                        child: Text(
+                          widget.description,
                           style: TextStyle(
                             fontSize: 20.0,
                           ),
                         ),
                       ),
-                      Text(widget.author,
-                        style: TextStyle(
-                          fontSize: 15.0
-                        ),
+                      Text(
+                        widget.author,
+                        style: TextStyle(fontSize: 15.0),
                       )
                     ],
                   ),
                 ),
               ),
             )
-
           ],
         ),
       ),
