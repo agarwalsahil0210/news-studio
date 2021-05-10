@@ -22,7 +22,7 @@ class _MyAppState extends State<HomePage> {
 
   Future<String> fetch() async {
     var jsondata = await http.get(
-        "http://newsapi.org/v2/everything?q=tech&apiKey=ca8ac2d63c8e447d91b08beb42b7a2f5");
+        "https://newsapi.org/v2/everything?q=tech&apiKey=ca8ac2d63c8e447d91b08beb42b7a2f5");
 
     var fetchdata = jsonDecode(jsondata.body);
     setState(() {
